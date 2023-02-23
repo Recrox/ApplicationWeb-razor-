@@ -1,0 +1,23 @@
+﻿@model PersonModel
+
+@{
+}
+
+
+
+<h1>Create Or Edit</h1>
+
+<div>
+    @using (Html.BeginForm("EditOrCreate", "People", FormMethod.Post))
+    {
+        <form>
+            @Html.TextBoxFor(i=>i.FirstName, new {@placehorlder = "FirstName"})
+            @Html.TextBoxFor(i=>i.LastName, new {@placehorlder = "LastName"})
+            @Html.TextBoxFor(i=>i.Age, new {@placehorlder = "Age", @type = "number"})
+             <!--même que <input type="number" placeholder="Age"> -->
+
+            @Html.CheckBoxFor(i=>i.IsAlive)
+            <input type="submit"/>
+        </form>
+    }
+</div>

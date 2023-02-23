@@ -1,0 +1,39 @@
+﻿
+@{
+}
+
+@model IEnumerable<PizzaModel>
+
+<h1>Index Pizza</h1>
+
+@Html.ActionLink("Create","Edit")
+
+<p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Calories</th>
+                <th>Grand Format</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <thbody>
+            @foreach (var model in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem=>model.Name)</td>
+                    <td>@Html.DisplayFor(modelItem=>model.Price)</td>
+                    <td>@Html.DisplayFor(modelItem=>model.Calories)</td>
+                    <td>@Html.DisplayFor(modelItem=>model.GrandFormat)</td>
+                    <td>
+                        @Html.ActionLink("Delete","DeleteById",new {id = model.Id})
+                        @Html.ActionLink("Edit","Edit",new {id = model.Id})
+                        @Html.ActionLink("Details","Details",new {id = model.Id})
+                    </td>
+                </tr>    
+            }
+        </thbody>
+    </table>
+</p>

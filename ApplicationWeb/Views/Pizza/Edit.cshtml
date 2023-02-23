@@ -1,0 +1,21 @@
+﻿
+@{
+}
+
+@model PizzaModel
+<h1>Create Or Edit</h1>
+
+<div>
+    @using (Html.BeginForm("EditOrCreate", "Pizza", FormMethod.Post))
+    {
+            <form>
+                @Html.TextBoxFor(i=>i.Name, new {@placehorlder = "Name"})
+                @Html.TextBoxFor(i=>i.Price, new {@placehorlder = "Price", @type = "number"})
+                @Html.TextBoxFor(i=>i.Calories, new {@placehorlder = "Calories", @type = "number"})
+                     <!--même que <input type="number" placeholder="Age"> -->
+
+                @Html.CheckBoxFor(i=>i.GrandFormat)
+                    <input type="submit"/>
+            </form>
+    }
+</div>
